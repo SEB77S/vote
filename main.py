@@ -1,7 +1,14 @@
-# mi_proyecto/main.py
+from flask import Flask
+from services.user_service import user_bp
 
-def main():
-    print("Hola, mundo desde mi proyecto base.")
+def create_app():
+    app = Flask(__name__)
+    
+    # Registrar blueprints
+    app.register_blueprint(user_bp, url_prefix="/api/users")
+    
+    return app
 
 if __name__ == "__main__":
-    main()
+    app = create_app()
+    app.run(debug=True)
