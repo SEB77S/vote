@@ -28,3 +28,6 @@ def create_user():
 @user_bp.route("/", methods=["GET"])
 def get_users():
     return jsonify(users), 200
+
+
+#ESTO ES UNA PRUEBA
